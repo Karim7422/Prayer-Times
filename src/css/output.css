@@ -571,6 +571,10 @@ video {
   display: flex;
 }
 
+.hidden {
+  display: none;
+}
+
 .w-3\/4 {
   width: 75%;
 }
@@ -653,6 +657,11 @@ video {
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 
 .font-bold {

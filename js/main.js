@@ -3,7 +3,7 @@ const currentDay = document.getElementById("current-day");
 const currentDate = document.getElementById("current-date");
 const currentHijryDate = document.getElementById("current-hijry-date");
 const currentLocation = document.getElementById("current-location");
-
+const errorMessage = document.getElementById('error-message')
 async function getUserLocation(location) {
     const latitude = location.coords.latitude;
     const longitude = location.coords.longitude;
@@ -11,6 +11,8 @@ async function getUserLocation(location) {
         `https://us1.locationiq.com/v1/reverse.php?key=pk.1b8798a6da62ec19f141fd591e4a48c2&lat=${latitude}&lon=${longitude}&format=json`
     );
     if (response.ok) {
+        errorMessage.classList.remove('flex')
+        errorMessage.classList.add('hidden')
         getCurrentDateAndTimings(latitude, longitude);
         const data = await response.json();
         //The Response {}
@@ -26,10 +28,11 @@ async function getUserLocation(location) {
         }
     }
 }
-function error(error) {
-    console.error(error);
+function errorHandling() {
+    document.getElementById('times-box').classList.add('hidden')
+    errorMessage.innerHTML = "Turn Your Location On And Refresh The Page To View Date And Prayer Times"
 }
-navigator.geolocation.getCurrentPosition(getUserLocation, error);
+navigator.geolocation.getCurrentPosition(getUserLocation, errorHandling);
 async function getCurrentDateAndTimings(latitude, longitude) {
     // Get Current Day
     const today = new Date();
