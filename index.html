@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/css/output.css">
+    <title>Prayer Times</title>
+
+</head>
+
+<body class="bg-gradient-to-r from-zinc-950 via-zinc-900 via-30% to-zinc-700">
+    <div>
+        <div class="text-center">
+            <h2 class="font-bold text-4xl md:text-6xl text-white mt-8">Prayer Times</h2>
+        </div>
+        <div class="flex flex-wrap justify-between">
+            <div class="img-box w-full lg:w-1/2 flex justify-center">
+                <img src="./images/png-transparent-mosque-classic-muslim-mosque-thumbnail.png" class="w-3/4"
+                    alt="prayer-img">
+            </div>
+            <div class="times-box w-full lg:w-1/2">
+                <div class="header flex justify-between items-center mt-8 mx-2 md:mx-8">
+                    <div>
+                        <p id="current-date" class="md:text-2xl font-semibold text-white"></p>
+                        <p id="current-hijry-date" class="md:text-2xl font-semibold text-white"></p>
+                    </div>
+                    <div>
+                        <p id="current-day" class="md:text-2xl font-semibold text-white"></p>
+                        <span id="current-location" class="md:text-2xl font-semibold text-white"></span>
+                    </div>
+                </div>
+                <div class="prayer-times flex flex-col justify-center items-center gap-4 mx-2 md:mx-8 mt-8">
+                    <div class="flex justify-between  items-center w-full ">
+                        <div class=" border-2 border-solid p-2 md:p-3 mr-4 flex justify-center items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="rgb(96 165 250)">
+                                <path
+                                    d="M11.3807 2.01886C9.91573 3.38768 9 5.3369 9 7.49999C9 11.6421 12.3579 15 16.5 15C18.6631 15 20.6123 14.0843 21.9811 12.6193C21.6613 17.8537 17.3149 22 12 22C6.47715 22 2 17.5228 2 12C2 6.68514 6.14629 2.33869 11.3807 2.01886Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <p
+                            class="prayer-name bg-gradient-to-r from-zinc-950 via-zinc-900 via-30% to-zinc-700  border-2 border-solid p-2 flex-[5] md:text-2xl font-semibold text-white">
+                            Fajr
+                        </p>
+                        <p
+                            class="prayer-time bg-gradient-to-r from-zinc-950 via-zinc-900 via-30% to-zinc-700 text-white border-2 border-solid p-2 flex justify-center items-center flex-1 md:text-2xl font-semibold">
+                        </p>
+                    </div>
+                    <div class="flex justify-between  items-center w-full ">
+                        <div class=" border-2 border-solid p-2 md:p-3 mr-4 flex justify-center items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="rgb(254 240 138)">
+                                <path
+                                    d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <p
+                            class="prayer-name bg-gradient-to-r from-zinc-950 via-zinc-900 via-30% to-zinc-700 border-2 border-solid p-2 flex-[5] md:text-2xl font-semibold text-white">
+                            Sunrise</p>
+                        <p
+                            class="prayer-time bg-gradient-to-r from-zinc-950 via-zinc-900 via-30% to-zinc-700 text-white border-2 border-solid p-2 flex justify-center items-center flex-1 md:text-2xl font-semibold">
+                        </p>
+                    </div>
+                    <div class="flex justify-between  items-center w-full ">
+                        <div class=" border-2 border-solid p-2 md:p-3 mr-4 flex justify-center items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="rgb(250 204 21)">
+                                <path
+                                    d="M12 18C8.68629 18 6 15.3137 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18ZM11 1H13V4H11V1ZM11 20H13V23H11V20ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM5.63604 16.9497L7.05025 18.364L4.92893 20.4853L3.51472 19.0711L5.63604 16.9497ZM23 11V13H20V11H23ZM4 11V13H1V11H4Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <p
+                            class="prayer-name bg-gradient-to-r from-zinc-950 via-zinc-900 via-30% to-zinc-700 border-2 border-solid p-2 flex-[5] md:text-2xl font-semibold text-white">
+                            Duhor</p>
+                        <p
+                            class="prayer-time bg-gradient-to-r from-zinc-950 via-zinc-900 via-30% to-zinc-700 text-white border-2 border-solid p-2 flex justify-center items-center flex-1 md:text-2xl font-semibold">
+                        </p>
+                    </div>
+                    <div class="flex justify-between  items-center w-full ">
+                        <div class=" border-2 border-solid p-2 md:p-3 mr-4 flex justify-center items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="rgb(249 115 22)">
+                                <path
+                                    d="M6.34141 14C6.12031 13.3744 6 12.7013 6 12C6 8.68629 8.68629 6 12 6C15.3137 6 18 8.68629 18 12C18 15.3137 15.3137 18 12 18V14H6.34141ZM6 20H15V22H6V20ZM1 11H4V13H1V11ZM2 16H10V18H2V16ZM11 1H13V4H11V1ZM3.51472 4.92893L4.92893 3.51472L7.05025 5.63604L5.63604 7.05025L3.51472 4.92893ZM16.9497 18.364L18.364 16.9497L20.4853 19.0711L19.0711 20.4853L16.9497 18.364ZM19.0711 3.51472L20.4853 4.92893L18.364 7.05025L16.9497 5.63604L19.0711 3.51472ZM23 11V13H20V11H23Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <p
+                            class="prayer-name bg-gradient-to-r from-zinc-950 via-zinc-900 via-30% to-zinc-700 border-2 border-solid p-2 flex-[5] md:text-2xl font-semibold text-white">
+                            Asr
+                        </p>
+                        <p
+                            class="prayer-time bg-gradient-to-r from-zinc-950 via-zinc-900 via-30% to-zinc-700 text-white border-2 border-solid p-2 flex justify-center items-center flex-1 md:text-2xl font-semibold">
+                        </p>
+                    </div>
+                    <div class="flex justify-between  items-center w-full ">
+                        <div class=" border-2 border-solid p-2 md:p-3 mr-4 flex justify-center items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="rgb(194 65 12)">
+                                <path
+                                    d="M9.98392 5.05991C11.1323 3.22236 13.1734 2 15.5 2C19.0899 2 22 4.91015 22 8.5C22 9.58031 21.7365 10.5991 21.2701 11.4955C22.3351 12.4985 23 13.9216 23 15.5C23 18.5376 20.5376 21 17.5 21H9C4.58172 21 1 17.4183 1 13C1 8.58172 4.58172 5 9 5C9.33312 5 9.66149 5.02036 9.98392 5.05991ZM12.0554 5.60419C14.0675 6.43637 15.6662 8.06578 16.4576 10.0986C16.7951 10.0339 17.1436 10 17.5 10C18.2351 10 18.9366 10.1442 19.5776 10.4059C19.8486 9.82719 20 9.18128 20 8.5C20 6.01472 17.9853 4 15.5 4C14.1177 4 12.8809 4.6233 12.0554 5.60419Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <p
+                            class="prayer-name bg-gradient-to-r from-zinc-950 via-zinc-900 via-30% to-zinc-700 border-2 border-solid p-2 flex-[5] md:text-2xl font-semibold text-white">
+                            Maghrib</p>
+                        <p
+                            class="prayer-time bg-gradient-to-r from-zinc-950 via-zinc-900 via-30% to-zinc-700 text-white border-2 border-solid p-2 flex justify-center items-center flex-1 md:text-2xl font-semibold">
+                        </p>
+                    </div>
+                    <div class="flex justify-between  items-center w-full ">
+                        <div class=" border-2 border-solid p-2 md:p-3 mr-4 flex justify-center items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="rgb(79 70 229)">
+                                <path
+                                    d="M9.8216 2.23796C9.29417 3.38265 9 4.65697 9 6C9 10.9706 13.0294 15 18 15C19.343 15 20.6174 14.7058 21.762 14.1784C20.7678 18.6537 16.7747 22 12 22C6.47715 22 2 17.5228 2 12C2 7.22532 5.3463 3.23221 9.8216 2.23796ZM18.1642 2.29104L19 2.5V3.5L18.1642 3.70896C17.4476 3.8881 16.8881 4.4476 16.709 5.16417L16.5 6H15.5L15.291 5.16417C15.1119 4.4476 14.5524 3.8881 13.8358 3.70896L13 3.5V2.5L13.8358 2.29104C14.5524 2.1119 15.1119 1.5524 15.291 0.835829L15.5 0H16.5L16.709 0.835829C16.8881 1.5524 17.4476 2.1119 18.1642 2.29104ZM23.1642 7.29104L24 7.5V8.5L23.1642 8.70896C22.4476 8.8881 21.8881 9.4476 21.709 10.1642L21.5 11H20.5L20.291 10.1642C20.1119 9.4476 19.5524 8.8881 18.8358 8.70896L18 8.5V7.5L18.8358 7.29104C19.5524 7.1119 20.1119 6.5524 20.291 5.83583L20.5 5H21.5L21.709 5.83583C21.8881 6.5524 22.4476 7.1119 23.1642 7.29104Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <p
+                            class="prayer-name bg-gradient-to-r from-zinc-950 via-zinc-900 via-30% to-zinc-700 border-2 border-solid p-2 flex-[5] md:text-2xl font-semibold text-white">
+                            Isha
+                        </p>
+                        <p
+                            class="prayer-time bg-gradient-to-r from-zinc-950 via-zinc-900 via-30% to-zinc-700 text-white border-2 border-solid p-2 flex justify-center items-center flex-1 md:text-2xl font-semibold">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
