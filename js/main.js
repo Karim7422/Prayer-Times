@@ -37,7 +37,7 @@ async function getCurrentDateAndTimings(latitude, longitude) {
     const month = today.getMonth() + 1;
     const day = today.getDate();
     const response = await fetch(
-        ` http://api.aladhan.com/v1/calendar/${year}/${month}?latitude=${latitude}&longitude=${longitude}&method=5`
+        ` https://api.aladhan.com/v1/calendar/${year}/${month}?latitude=${latitude}&longitude=${longitude}&method=5`
     );
     if (response.ok) {
         const data = await response.json();
